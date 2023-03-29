@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Temperature Converter</title>
+        <link rel="stylesheet" href="css\task3.css">
+    </head>
+    <body>
+        <h1>Temperature Converter</h1>
+        <div class="container">
+            <div class="input-container">
+                <label>Enter temperature in Fahrenheit:</label>
+                <input type="text" id="fahrenheit">
+                <input type="submit" value="Convert" onclick="convertFahrenheitToCelsius()">
+            </div>
+            <div class="output-container" id="output-container1">
+                <label>Temperature in Celsius:</label>
+                <input type="text" id="celsius" readonly>
+            </div>
+            <div class="input-container">
+                <label>Enter temperature in Celsius:</label>
+                <input type="text" id="celsius2">
+                <input type="submit" value="Convert" onclick="convertCelsiusToFahrenheit()">
+            </div>
+            <div class="output-container" id="output-container2">
+                <label>Temperature in Fahrenheit:</label>
+                <input type="text" id="fahrenheit2" readonly>
+            </div>
+        </div>
+    </body>
+    <script>
+    function convertFahrenheitToCelsius() {
+        var fahrenheitInput = document.getElementById("fahrenheit");
+        var celsiusOutput = document.getElementById("celsius");
+        var fahrenheit = parseFloat(fahrenheitInput.value);
+        var celsius = (fahrenheit - 32) * 5 / 9;
+        celsiusOutput.value = celsius.toFixed(2);
+        var outputContainer1 = document.getElementById("output-container1");
+        outputContainer1.style.display = "flex";
+    }
+    function convertCelsiusToFahrenheit() {
+        var celsiusInput = document.getElementById("celsius2");
+        var fahrenheitOutput = document.getElementById("fahrenheit2");
+        var celsius = parseFloat(celsiusInput.value);
+        var fahrenheit = celsius * 9 / 5 + 32;
+        fahrenheitOutput.value = fahrenheit.toFixed(2);
+        var outputContainer2 = document.getElementById("output-container2");
+        outputContainer2 = document.getElementById("output-container2");
+        outputContainer2.style.display = "flex";
+    }
+    </script>
+</html>
